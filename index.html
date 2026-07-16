@@ -1,41 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vault</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+
+background:
+radial-gradient(circle at 18% 20%, rgba(218,184,103,.22), transparent 30%),
+radial-gradient(circle at 82% 18%, rgba(166,147,210,.12), transparent 28%),
+radial-gradient(circle at 20% 82%, rgba(194,156,126,.16), transparent 30%),
+radial-gradient(circle at 85% 82%, rgba(170,186,153,.12), transparent 28%),
+linear-gradient(135deg,#f8f4ed,#ebe2d4,#ddd3c4);
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:flex-start;
+
+padding:80px 20px;
+
+}
+
+#login{
+
+position:fixed;
+inset:0;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+background:
+radial-gradient(circle at 18% 20%, rgba(218,184,103,.22), transparent 30%),
+radial-gradient(circle at 82% 18%, rgba(166,147,210,.12), transparent 28%),
+radial-gradient(circle at 20% 82%, rgba(194,156,126,.16), transparent 30%),
+radial-gradient(circle at 85% 82%, rgba(170,186,153,.12), transparent 28%),
+linear-gradient(135deg,#f8f4ed,#ebe2d4,#ddd3c4);
+
+z-index:1000;
+
+}
+
+.loginCard{
+
+background:#f8f2e8;
+
+padding:45px;
+
+border-radius:28px;
+
+width:400px;
+
+box-shadow:0 20px 60px rgba(0,0,0,.15);
+
+text-align:center;
+
+}
+
+.loginTitle{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:56px;
+
+margin-bottom:20px;
+
+background:linear-gradient(180deg,#f9edba,#d8b45d,#9f7722);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+.loginCard input{
+
+width:100%;
+
+padding:16px;
+
+margin-top:18px;
+
+border-radius:14px;
+
+border:1px solid #d8d0c4;
+
+font-size:17px;
+
+outline:none;
+
+}
+
+.loginCard button{
+
+margin-top:22px;
+
+padding:14px 28px;
+
+background:#b89139;
+
+color:white;
+
+border:none;
+
+border-radius:14px;
+
+cursor:pointer;
+
+font-size:17px;
+
+}
+
+#error{
+
+margin-top:18px;
+
+color:#b00020;
+
+height:20px;
+
+}
+
+.container{
+
+width:100%;
+max-width:900px;
+
+display:none;
+
+}
+
+.section{
+
+margin-bottom:90px;
+
+}
+
+.title{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:60px;
+
+text-align:center;
+
+margin-bottom:28px;
+
+background:linear-gradient(180deg,#f9edba,#d8b45d,#9f7722);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+.card{
+
+background:#f8f2e8;
+
+width:80%;
+
+max-width:720px;
+
+margin:auto;
+
+padding:28px;
+
+border-radius:28px;
+
+box-shadow:0 18px 45px rgba(0,0,0,.10);
+
+}
+
+textarea{
+
+width:100%;
+
+height:220px;
+
+padding:22px;
+
+border-radius:18px;
+
+border:1px solid #d8d0c4;
+
+background:#fbf8f2;
+
+font-size:18px;
+
+font-family:'Inter',sans-serif;
+
+resize:vertical;
+
+outline:none;
+
+}
+
+textarea:focus{
+
+border-color:#b48d32;
+
+}
+
+@media(max-width:768px){
+
+.title{
+
+font-size:42px;
+
+}
+
+.card{
+
+width:95%;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="login">
+
+<div class="loginCard">
+
+<div class="loginTitle">
+
+Vault
+
+</div>
+
+<p>Enter Password</p>
+
+<input
+type="password"
+id="password"
+autocomplete="off"
+>
+
+<button id="enterButton">
+
+Enter Vault
+
+</button>
+
+<div id="error"></div>
+
+</div>
+
+</div>
+
+<div class="container" id="vault">
+
+<section class="section">
+
+<h1 class="title">
+
+Mission Statement
+
+</h1>
+
+<div class="card">
+
+<textarea
+id="mission"
+placeholder="Write your mission statement..."
+></textarea>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h1 class="title">
+
+Goals
+
+</h1>
+
+<div class="card">
+
+<textarea
+id="goals"
+placeholder="Write your goals..."
+></textarea>
+
+</div>
+
+</section>
+
+</div>
 <script>
 
 const PASSWORD = "1$=10$ NGU";
 
-const entered = prompt("Enter the Vault Password");
+const login = document.getElementById("login");
+const vault = document.getElementById("vault");
 
-if (entered !== PASSWORD) {
+const passwordInput = document.getElementById("password");
+const enterButton = document.getElementById("enterButton");
+const error = document.getElementById("error");
 
-    document.body.innerHTML = `
-    <div style="
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        height:100vh;
-        background:#f8f4ed;
-        font-family:Inter,sans-serif;
-        font-size:40px;
-        color:#444;">
-        Access Denied
-    </div>
-    `;
+function unlockVault(){
 
-    throw new Error("Wrong Password");
+    if(passwordInput.value !== PASSWORD){
+
+        error.textContent = "Incorrect Password";
+
+        passwordInput.value = "";
+
+        passwordInput.focus();
+
+        return;
+
+    }
+
+    login.style.display = "none";
+
+    vault.style.display = "block";
+
+    loadSavedText();
 
 }
 
+enterButton.addEventListener("click", unlockVault);
+
+passwordInput.addEventListener("keydown", function(event){
+
+    if(event.key === "Enter"){
+
+        unlockVault();
+
+    }
+
+});
+
 const mission = document.getElementById("mission");
+
 const goals = document.getElementById("goals");
 
-mission.value = localStorage.getItem("mission") || "";
-goals.value = localStorage.getItem("goals") || "";
+function loadSavedText(){
 
-mission.addEventListener("input", () => {
+    mission.value = localStorage.getItem("mission") || "";
+
+    goals.value = localStorage.getItem("goals") || "";
+
+}
+
+mission.addEventListener("input", function(){
+
     localStorage.setItem("mission", mission.value);
+
 });
 
-goals.addEventListener("input", () => {
+goals.addEventListener("input", function(){
+
     localStorage.setItem("goals", goals.value);
+
 });
+    passwordInput.focus();
 
 </script>
+
+</body>
+
+</html>

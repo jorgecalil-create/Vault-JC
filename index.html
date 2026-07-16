@@ -1,149 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Website</title>
+<title>Vault</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
 
-    font-family:'Inter',sans-serif;
+font-family:'Inter',sans-serif;
 
-    background:
-    radial-gradient(circle at 18% 20%, rgba(218,184,103,.22), transparent 30%),
-    radial-gradient(circle at 82% 18%, rgba(166,147,210,.12), transparent 28%),
-    radial-gradient(circle at 20% 82%, rgba(194,156,126,.16), transparent 30%),
-    radial-gradient(circle at 85% 82%, rgba(170,186,153,.12), transparent 28%),
-    linear-gradient(135deg,#f8f4ed,#ebe2d4,#ddd3c4);
+background:
+radial-gradient(circle at 18% 20%, rgba(218,184,103,.22), transparent 30%),
+radial-gradient(circle at 82% 18%, rgba(166,147,210,.12), transparent 28%),
+radial-gradient(circle at 20% 82%, rgba(194,156,126,.16), transparent 30%),
+radial-gradient(circle at 85% 82%, rgba(170,186,153,.12), transparent 28%),
+linear-gradient(135deg,#f8f4ed,#ebe2d4,#ddd3c4);
 
-    min-height:100vh;
+min-height:100vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
+display:flex;
+justify-content:center;
+align-items:flex-start;
 
-    padding:80px 20px;
+padding:80px 20px;
+
 }
 
 .container{
 
-    width:100%;
-    max-width:900px;
+width:100%;
+max-width:900px;
 
 }
 
 .section{
 
-    margin-bottom:90px;
+margin-bottom:90px;
 
 }
 
 .title{
 
-    font-family:'Cormorant Garamond',serif;
+font-family:'Cormorant Garamond',serif;
 
-    font-size:60px;
+font-size:60px;
 
-    font-weight:700;
+font-weight:700;
 
-    text-align:center;
+text-align:center;
 
-    margin-bottom:28px;
+margin-bottom:28px;
 
-    letter-spacing:1px;
+letter-spacing:1px;
 
-    background:linear-gradient(
-    180deg,
-    #f9edba,
-    #d8b45d,
-    #9f7722
-    );
+background:linear-gradient(
+180deg,
+#f9edba,
+#d8b45d,
+#9f7722
+);
 
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 
 }
 
 .card{
 
-    background:#f8f2e8;
+background:#f8f2e8;
 
-    width:80%;
+width:80%;
 
-    max-width:720px;
+max-width:720px;
 
-    margin:auto;
+margin:auto;
 
-    padding:28px;
+padding:28px;
 
-    border-radius:28px;
+border-radius:28px;
 
-    border:1px solid rgba(0,0,0,.08);
+border:1px solid rgba(0,0,0,.08);
 
-    box-shadow:
-        0 18px 45px rgba(0,0,0,.10);
+box-shadow:0 18px 45px rgba(0,0,0,.10);
 
-    transition:.25s ease;
+transition:.25s ease;
 
 }
 
 .card:hover{
 
-    transform:translateY(-4px);
+transform:translateY(-4px);
 
-    box-shadow:
-        0 28px 55px rgba(0,0,0,.14);
+box-shadow:0 28px 55px rgba(0,0,0,.14);
 
 }
 
 textarea{
 
-    width:100%;
+width:100%;
 
-    height:190px;
+height:190px;
 
-    border:1px solid #d8d0c4;
+border:1px solid #d8d0c4;
 
-    border-radius:18px;
+border-radius:18px;
 
-    background:#fbf8f2;
+background:#fbf8f2;
 
-    padding:22px;
+padding:22px;
 
-    resize:vertical;
+resize:vertical;
 
-    outline:none;
+outline:none;
 
-    font-size:18px;
+font-size:18px;
 
-    font-family:'Inter',sans-serif;
+font-family:'Inter',sans-serif;
 
-    line-height:1.8;
+line-height:1.8;
 
-    color:#333;
+color:#333;
 
 }
 
 textarea:focus{
 
-    border-color:#b48d32;
+border-color:#b48d32;
 
 }
 
 textarea::placeholder{
 
-    color:#9a9a9a;
+color:#9a9a9a;
 
 }
 
@@ -151,19 +152,19 @@ textarea::placeholder{
 
 .title{
 
-    font-size:42px;
+font-size:42px;
 
 }
 
 .card{
 
-    width:95%;
+width:95%;
 
 }
 
 textarea{
 
-    height:170px;
+height:170px;
 
 }
 
@@ -177,31 +178,49 @@ textarea{
 
 <div class="container">
 
-    <section class="section">
+<section class="section">
 
-        <h1 class="title">Mission Statement</h1>
+<h1 class="title">Mission Statement</h1>
 
-        <div class="card">
+<div class="card">
 
-            <textarea placeholder="Write here..."></textarea>
-
-        </div>
-
-    </section>
-
-    <section class="section">
-
-        <h1 class="title">Goals</h1>
-
-        <div class="card">
-
-            <textarea placeholder="Write here..."></textarea>
-
-        </div>
-
-    </section>
+<textarea id="mission" placeholder="Write your mission statement..."></textarea>
 
 </div>
+
+</section>
+
+<section class="section">
+
+<h1 class="title">Goals</h1>
+
+<div class="card">
+
+<textarea id="goals" placeholder="Write your goals..."></textarea>
+
+</div>
+
+</section>
+
+</div>
+
+<script>
+
+const mission = document.getElementById("mission");
+const goals = document.getElementById("goals");
+
+mission.value = localStorage.getItem("mission") || "";
+goals.value = localStorage.getItem("goals") || "";
+
+mission.addEventListener("input", () => {
+localStorage.setItem("mission", mission.value);
+});
+
+goals.addEventListener("input", () => {
+localStorage.setItem("goals", goals.value);
+});
+
+</script>
 
 </body>
 
